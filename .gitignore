@@ -1,2 +1,5 @@
 .ipynb_checkpoints
 .DS_Store
+w2v/lib8.egg-info
+w2v/lib8/__pycache__
+w2v/build/lib/lib8

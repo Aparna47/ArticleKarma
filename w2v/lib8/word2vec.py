@@ -69,7 +69,7 @@ class Word2Vec(nn.Module):
 
 
     @classmethod
-    def load_from_checkpoint(cls, checkpoint_path):
+    def load_from_checkpoint(cls, checkpoint_path, device=torch.device("cpu")):
         """
         Loads a model from a checkpoint file.
         This is a factory method that creates a new model instance.
@@ -80,7 +80,7 @@ class Word2Vec(nn.Module):
             SkipGramNegSampling: The loaded model instance.
         """
         # 1. Load the checkpoint dictionary
-        checkpoint = torch.load(checkpoint_path)
+        checkpoint = torch.load(checkpoint_path, map_location=device)
 
         # 2. Instantiate the model using the saved hyperparameters and mappings
         model = cls(
